@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
-    private BookMapper bookMapper;
+    private final BookMapper bookMapper;
 
     public Page<Book> getAllBooks(Pageable pageable) {
         return bookRepository.findAll(pageable);
@@ -49,6 +49,7 @@ public class BookService {
             existingBook.setTitle(updatedBook.getTitle());
             existingBook.setAuthor(updatedBook.getAuthor());
             existingBook.setPrice(updatedBook.getPrice());
+            existingBook.setStockQuantity(updatedBook.getStockQuantity());
             existingBook.setUpdatedAt(currentTimestamp);
 
             BookResponseDto bookResponseDto = bookMapper.mapToResponse(bookRepository.save(existingBook));

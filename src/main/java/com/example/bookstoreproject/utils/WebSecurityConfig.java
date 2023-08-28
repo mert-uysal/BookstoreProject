@@ -66,7 +66,7 @@ public class WebSecurityConfig {
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeHttpRequests()
-            .antMatchers("/api/users/**")
+            .antMatchers("/api/users/**", "/swagger-ui/**" , "/v3/api-docs/**")
             .permitAll()
 //            .antMatchers("/api/book/admin")
 //            .hasRole("admin")

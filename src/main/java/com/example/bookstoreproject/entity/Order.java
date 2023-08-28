@@ -1,6 +1,5 @@
 package com.example.bookstoreproject.entity;
 
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -14,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,7 +33,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private User userId;
+    private User user;
 
     @Column(name = "total_price")
     private float totalPrice;
